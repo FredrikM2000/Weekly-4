@@ -22,7 +22,8 @@ void task2() {
 
 	char arr[100]{};
 	arr[20] = '/';
-	arr[89] = ' ';
+	arr[89] = '\\';
+	arr[66] = 'G';
 	int n = 0;
 	
 	bool win = false;
@@ -57,13 +58,18 @@ void task2() {
 			std::cout << "Not valid";
 		}
 		if (arr[n] == '/') {
+			n -= 10;
+		}
+		if (arr[n] == '\\') {
 			n += 10;
 		}
-
+		if (arr[n] == 'G') {
+			win = true;
+		}
 
 		system("cls");
 	} while (win == false);
-	system("pause");
+	exit(0);
 }
 void task3() {
 
