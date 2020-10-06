@@ -10,6 +10,7 @@ char converter(char i) {
 }
 
 void task1() {
+	std::cout << "Task 1\n";
 	std::string message;
 	std::cout << "Enter a message : ";
 	std::getline(std::cin, message);
@@ -17,35 +18,33 @@ void task1() {
 	for (int i = 0; i < message.size(); i++) {
 		message.at(i) = converter(message.at(i));
 	}
-	std::cout << message;
+	std::cout << message << "\n";
 }
 
 void task2() {
 
 	char arr[100]{};
-	arr[20] = '/';
-	arr[89] = '\\';
+	arr[25] = '/';
+	arr[87] = '\\';
 	arr[66] = 'G';
 	int n = 1;
 	
 	bool win = false;
 
 	do {
-		
+		std::cout << "Task 2\n";
+
 		arr[n] = 'O';
-		std::cout << " |";
-		for (int u = 1; u < sizeof(arr); u++) {
-			//std::cout << "|";
-			
-			//std::cout << "|";
+
+		for (int u = 0; u < sizeof(arr); u++) {
 			if (u % 10 == 0) {
-				std::cout << "\n";
+				std::cout << "\n|";
 			}
 			std::cout << arr[u];
 			std::cout << "|";
 		}
 
-		std::cout << "\nEnter a letter : ";
+		std::cout << "\nUse W/A/S/D to move around";
 		char m = _getch();
 
 		arr[n] = ' ';
@@ -66,21 +65,8 @@ void task2() {
 			std::cout << "Not valid";
 		}
 
-		if (n <= 0) {
-			n = 0;
-		}
-		if (n >= 100) {
-			n = 100;
-		}
-
 		if (arr[n] == '/') {
 			n -= 10;
-		}
-		if (n <= 0) {
-			n = 0;
-		}
-		if (n >= 100) {
-			n = 100;
 		}
 		if (arr[n] == '\\') {
 			n += 10;
@@ -88,17 +74,9 @@ void task2() {
 		if (arr[n] == 'G') {
 			win = true;
 		}
-		if (n <= 0) {
-			n = 0;
-		}
-		if (n >= 100) {
-			n = 100;
-		}
-	
-
 		system("cls");
 	} while (win == false);
-	exit(0);
+	return;
 }
 
 struct people {
@@ -119,6 +97,7 @@ void printout() {
 }
 
 void task3() {
+	std::cout << "Task 3\n";
 	char answer;
 	std::string pname;
 	int pPhNumber;
@@ -143,7 +122,7 @@ void task3() {
 		printout();
 	}
 	else if (answer == 'e') {
-		exit(0);
+		return;
 	}
 		
 	std::cout << "Add new person/ print information/ exit program(a/p/e) : ";
@@ -163,7 +142,7 @@ void task3() {
 		printout();
 	}
 	else if (answer == 'e') {
-		exit(0);
+		return;
 	}
 	
 	std::cout << "Add new person/ print information/ exit program(a/p/e) : ";
@@ -183,7 +162,7 @@ void task3() {
 		printout();
 	}
 	else if (answer == 'e') {
-		exit(0);
+		return;
 	}
 	
 	std::cout << "Add new person/ print information/ exit program(a/p/e) : ";
@@ -203,7 +182,7 @@ void task3() {
 		printout();
 	}
 	else if (answer == 'e') {
-		exit(0);
+		return;
 	}
 
 	std::cout << "Add new person/ print information/ exit program(a/p/e) : ";
@@ -223,7 +202,7 @@ void task3() {
 		printout();
 	}
 	else if (answer == 'e') {
-		exit(0);
+		return;
 	}
 
 	std::cout << "Add new person/ print information/ exit program(a/p/e) : ";
@@ -243,7 +222,7 @@ void task3() {
 		printout();
 	}
 	else if (answer == 'e') {
-		exit(0);
+		return;
 	}
 	std::cout << "Add new person/ print information/ exit program(a/p/e) : ";
 	std::cin >> answer;
@@ -262,7 +241,7 @@ void task3() {
 		printout();
 	}
 	else if (answer == 'e') {
-		exit(0);
+		return;
 	}
 	std::cout << "Add new person/ print information/ exit program(a/p/e) : ";
 	std::cin >> answer;
@@ -281,7 +260,7 @@ void task3() {
 		printout();
 	}
 	else if (answer == 'e') {
-		exit(0);
+		return;
 	}
 	std::cout << "Add new person/ print information/ exit program(a/p/e) : ";
 	std::cin >> answer;
@@ -300,7 +279,7 @@ void task3() {
 		printout();
 	}
 	else if (answer == 'e') {
-		exit(0);
+		return;
 	}
 	std::cout << "Add new person/ print information/ exit program(a/p/e) : ";
 	std::cin >> answer;
@@ -319,7 +298,7 @@ void task3() {
 		printout();
 	}
 	else if (answer == 'e') {
-		exit(0);
+		return;
 	}
 }
 
@@ -334,6 +313,7 @@ void rollDice() {
 }
 
 void DiceTask() {
+	std::cout << "Task 3\n";
 	char diceAnswer = ' ';
 	bool endprocess = false;
 	int keep;
@@ -343,7 +323,7 @@ void DiceTask() {
 	bool keepdice4 = false;
 	bool keepdice5 = false;
 	int keepdice[5];
-	int scounter = 0;
+	int sixcounter = 0;
 	bool pair = false;
 
 	do {
@@ -370,15 +350,15 @@ void DiceTask() {
 			std::cout << dices[r] << "|";
 		}
 
-		std::cout << "\nWould you like to halt process(h)/Roll again(r)/Keep dices(k)\n";
+		std::cout << "\nWould you like to halt process(h)/Roll again(r)/Keep a dice of your choice(k)\n";
 		std::cin >> diceAnswer;
 
 		if (diceAnswer == 'h') {
 
-			scounter = 0;
+			sixcounter = 0;
 			for (int s = 0; s <= 4; s++) {
 				if (dices[s] == 6) {
-					scounter += 1;
+					sixcounter += 1;
 				}
 			}
 
@@ -389,9 +369,6 @@ void DiceTask() {
 					}
 				}
 			}
-
-
-			//calculate
 			endprocess = true;
 		}
 		else if (diceAnswer == 'r') {
@@ -434,20 +411,23 @@ void DiceTask() {
 	} while (endprocess == false);
 
 	//show result
-	std::cout << "You had " << scounter << " sixes\n";
+	std::cout << "You had " << sixcounter << " sixes\n";
 	if (pair == true) {
-		std::wcout << "Nice";
+		std::wcout << "You have a pair!";
 	}
-	//for loop
-	//if 6 counter ++
-	//if 5counter == 2 5counter = 0 pair = true
 }
 
 
 
 int main() {
-	//task1();
-	//task2();
-	//task3();
+	task1();
+	system("pause");
+	system("cls");
+	task2();
+	system("pause");
+	system("cls");
+	task3();
+	system("pause");
+	system("cls");
 	DiceTask();
 }
